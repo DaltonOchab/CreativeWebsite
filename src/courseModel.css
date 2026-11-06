@@ -1,0 +1,32 @@
+.hero .product-visual {right: 1%; top: 22%; width: 47%; max-width: 870px; z-index: 3;}
+.course-model {margin: 0; color: #f1f6e9;}
+.course-stage {position: relative; aspect-ratio: 1.4; isolation: isolate;}
+.course-stage canvas, .course-preview {position: absolute; width: 100%; height: 100%; inset: 0; display: block;}
+.course-stage canvas {opacity: 0; cursor: grab;}
+.course-stage canvas:active {cursor: grabbing;}
+.course-stage .course-ready {opacity: 1; transition: opacity .35s ease;}
+.course-preview {object-fit: contain; border-radius: 16px;}
+.course-model figcaption {width: fit-content; max-width: 100%; margin: 0 auto; border-radius: 32px; background: #12241fe8; border: 1px solid #f4f9e838; padding: 4px 8px 4px 16px; display: flex; align-items: center; gap: 12px; font-size: 12px;}
+.course-controls {display: flex; align-items: center; border-left: 1px solid #f4f9e83a; padding-left: 4px;}
+.course-controls button {background: transparent; color: inherit; border: 0; border-radius: 20px; min-width: 40px; min-height: 40px; padding: 0 8px; cursor: pointer; font: inherit;}
+.course-controls button:hover, .course-controls button:focus-visible {background: #ecff9233;}
+.course-stage canvas:focus-visible {outline: 2px solid var(--volt); outline-offset: -4px;}
+@media (min-width: 701px) and (max-width: 1000px) {
+  .hero .hero-copy {width: 49%; left: 5%;}
+  .hero .product-visual {width: 48%; top: 32%; right: 0;}
+}
+@media (max-width: 700px) {
+  .hero .product-visual {position: relative; right: auto; top: auto; width: 95%; margin: 12px auto 64px;}
+  .hero:has(.course-model) {min-height: 100svh;}
+}
+@media (prefers-reduced-motion: reduce) {
+  .course-stage .course-ready {transition: none;}
+}
+.hero:has(.course-model) .course-background {filter: brightness(.68);}
+@media (max-width: 700px) {
+  .hero .hero-copy {padding-top: 102px;}
+  .hero .hero-copy h1 {font-size: clamp(39px, 10.5vw, 54px);}
+  .hero .hero-copy .actions {flex-direction: row; flex-wrap: wrap; gap: 8px;}
+  .hero .hero-copy .actions a {width: auto; padding: 12px 14px;}
+  .hero .hero-copy .note {font-size: 11px;}
+}

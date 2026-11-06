@@ -3,6 +3,7 @@ import { useScroll, useMotionValueEvent, useReducedMotion } from 'motion/react'
 import { ramp } from './scroll'
 import Footer from './Footer'
 import Pricing from './Pricing'
+import CourseModel from './CourseModel'
 
 const steps = [
   { title: 'Pair your ball.', text: 'The concept connects a compatible golf ball with an intuitive mobile app before your round.' },
@@ -15,13 +16,6 @@ const markets = [
   { name: 'California', count: 606, idea: 'Collect golfer feedback on convenience, feel, and price.' },
   { name: 'Midwest', count: null, idea: 'Include a regional pilot: the Midwest leads in mean establishments per state (268.25).' },
 ]
-
-function Ball() {
-  return <svg className="ball-art" viewBox="0 0 400 400" role="img" aria-label="Concept golf ball with a locator mark">
-    <defs><radialGradient id="ball"><stop stopColor="#fff" offset="0"/><stop stopColor="#cbd1c5" offset=".7"/><stop stopColor="#647565" offset="1"/></radialGradient><pattern id="dimples" width="24" height="21" patternUnits="userSpaceOnUse"><circle cx="12" cy="10" r="6" fill="none" stroke="#6e7d6b" strokeOpacity=".23"/><path d="M7 9a5 5 0 0 1 9-2" fill="none" stroke="#fff" strokeOpacity=".8"/></pattern><clipPath id="round"><circle cx="200" cy="200" r="155"/></clipPath></defs>
-    <ellipse cx="200" cy="365" rx="119" ry="15" fill="#000" opacity=".3"/><circle cx="200" cy="200" r="155" fill="url(#ball)"/><circle cx="200" cy="200" r="155" fill="url(#dimples)" clipPath="url(#round)"/><g fill="none" stroke="#35492e" strokeWidth="5"><circle cx="240" cy="190" r="20"/><circle cx="240" cy="190" r="8"/><path d="M240 160v-12m0 84v-12m-30-30h-12m84 0h-12"/></g><text x="200" y="258" textAnchor="middle" fill="#32462e" fontSize="12" letterSpacing="4">GOLF BALL LOCATOR</text>
-  </svg>
-}
 
 function Demo() {
   const [distance, setDistance] = useState(24)
@@ -56,7 +50,7 @@ export default function App() {
   const phase = Math.min(2, Math.floor(progress * 3))
   return <><a className="skip" href="#main">Skip to content</a><header><a className="brand" href="#main"><span className="brand-icon">◎</span> Golf Ball Locator</a><nav aria-label="Main navigation"><a href="#how">The idea</a><a href="#demo">Try the locator</a><a href="#research">Our research</a><a href="#pricing">Pricing</a></nav><a className="nav-cta" href="#pricing">View pricing ↗</a></header>
     <main id="main"><div className="scroll-story" ref={wrap}><section className="hero"><img className="course-background" src={`${import.meta.env.BASE_URL}assets/course.svg`} alt="Illustrated aerial view of a golf fairway, bunkers, and putting green" style={{transform:reduced ? undefined : `scale(${1 + progress*.15}) translateY(${-progress*2}%)`}}/><div className="hero-shade"/><div className="hero-copy" style={{opacity:1-ramp(progress,[.24,.38]),transform:reduced ? undefined : `translateY(${-ramp(progress,[.24,.38])*60}px)`,visibility:phase>0?'hidden':'visible'}}><p className="eyebrow">A SMARTER SEARCH. A BETTER ROUND.</p><h1>Less searching.<br/>More <em>golf.</em></h1><p>Find your ball. Keep your rhythm. A smart golf ball and mobile app concept for golfers who would rather play than search.</p><div className="actions"><a className="button primary" href="#demo">Try the locator <span>↗</span></a><a className="button outline" href="#pricing">Explore the pack <span>↓</span></a></div><p className="note">Student venture concept · Product in development</p></div>
-    <div className="product-visual" style={{opacity:1-ramp(progress,[.26,.4]),visibility:phase>0?'hidden':'visible'}}><div className="orbital"/><Ball/><div className="signal-tag glass"><span className="dot"/> MADE TO BE FOUND <small>Concept visualization</small></div></div>
+    <div className="product-visual" style={{opacity:1-ramp(progress,[.26,.4]),visibility:phase>0?'hidden':'visible'}}><CourseModel/></div>
     <div className="story-panel" style={{opacity:ramp(progress,[.33,.42])*(1-ramp(progress,[.60,.70])),visibility:phase===1?'visible':'hidden'}}><p className="eyebrow">THE MOMENT AFTER THE SHOT</p><h2>Into the rough.<br/><em>Not out of reach.</em></h2><p>Follow the proposed app signal. Trigger an audible cue. Spend less of your round wondering where the ball went.</p><a className="text-link" href="#demo">Experience the simulation ↗</a></div>
     <div className="story-panel" style={{opacity:ramp(progress,[.69,.8]),visibility:phase===2?'visible':'hidden'}}><p className="eyebrow">THE MISSION</p><h2>Keep the game.<br/><em>Lose the frustration.</em></h2><p>Our mission is to make finding lost golf balls easier through smart technology and an intuitive app—so golfers can spend more time enjoying the game.</p><a className="text-link" href="#how">See how the concept works ↓</a></div>
     <div className="scene-index" aria-label={`Scene ${phase+1} of 3`}>{['THE BALL','THE SEARCH','THE GAME'].map((s,i)=><span className={phase===i?'current':''} key={s}>0{i+1} <small>{s}</small></span>)}</div><div className="hero-bottom"><span>DESIGNED AROUND YOUR NEXT ROUND</span><span>SCROLL TO EXPLORE ↓</span></div></section></div>

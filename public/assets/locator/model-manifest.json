@@ -1,0 +1,98 @@
+{
+  "schemaVersion": "1.0.0",
+  "projectName": "The lost ball, found.",
+  "modelName": "The lost ball, found.",
+  "modelType": "Golf locator",
+  "confirmationTimestamp": "2026-11-03T19:56:53.985Z",
+  "dimensions": {
+    "size": [
+      10,
+      2.675,
+      7
+    ],
+    "units": "meters",
+    "note": "Concept scene dimensions, not manufacturing specifications."
+  },
+  "coordinateSystem": {
+    "up": "+Y",
+    "forward": "+Z"
+  },
+  "camera": {
+    "position": [
+      10.188999750176208,
+      9.323149787649777,
+      12.22679970021145
+    ],
+    "view": "Isometric",
+    "projection": "perspective"
+  },
+  "background": "#e9eade",
+  "lighting": "Daylight",
+  "description": "A GPS-connected golf ball and companion app. Locate your ball, tap to ping, and get back to your game. Stylized concept scene; not an engineering reconstruction.",
+  "hotspots": [
+    {
+      "name": "Locator ball",
+      "position": [
+        -2.6,
+        0.75,
+        -1.8
+      ],
+      "description": "Locator ball"
+    },
+    {
+      "name": "Ping ring 1",
+      "position": [
+        -2.6,
+        0.49,
+        -1.8
+      ],
+      "description": "Ping ring 1"
+    },
+    {
+      "name": "Ping ring 2",
+      "position": [
+        -2.6,
+        0.49,
+        -1.8
+      ],
+      "description": "Ping ring 2"
+    },
+    {
+      "name": "Ping ring 3",
+      "position": [
+        -2.6,
+        0.49,
+        -1.8
+      ],
+      "description": "Ping ring 3"
+    },
+    {
+      "name": "Phone body",
+      "position": [
+        -3.5,
+        1.1,
+        -0.1
+      ],
+      "description": "Phone body"
+    },
+    {
+      "name": "Phone display",
+      "position": [
+        -3.5,
+        1.1,
+        0
+      ],
+      "description": "Phone display"
+    }
+  ],
+  "files": {
+    "model": "model.glb",
+    "project": "project.json",
+    "preview": "preview.png",
+    "readme": "README.txt"
+  },
+  "integrity": {
+    "algorithm": "SHA-256",
+    "model": "46450956e0b851976657e19152dc4213f05828fbe410b406b9200be5c5e35b2d"
+  }
+}
